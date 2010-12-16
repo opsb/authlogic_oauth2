@@ -43,7 +43,7 @@ module AuthlogicOauth2
     end
     
     def oauth2_client
-      OAuth2::Client.new(oauth2_client_id, oauth2_client_secret, :site => oauth2_site)
+      OAuth2::Client.new(oauth2_client_id, oauth2_client_secret, oauth2_config)
     end
     
     # Convenience method for accessing the session controller
@@ -60,8 +60,8 @@ module AuthlogicOauth2
       is_auth_session? ? self.class.oauth2_client_secret : session_class.oauth2_client_secret
     end
     
-    def oauth2_site
-      is_auth_session? ? self.class.oauth2_site : session_class.oauth2_site
+    def oauth2_config
+      is_auth_session? ? self.class.oauth2_config : session_class.oauth2_conf
     end
     
     def oauth2_scope

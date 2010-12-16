@@ -33,10 +33,10 @@ module AuthlogicOauth2
       
       # * <tt>Default:</tt> ''
       # * <tt>Accepts:</tt> String
-      def oauth2_site(value = nil)
-        rw_config(:oauth2_site, value, '')
+      def oauth2_config(value = nil)
+        rw_config(:oauth2_config, value, '')
       end
-      alias_method :oauth2_site=, :oauth2_site
+      alias_method :oauth2_config=, :oauth2_config
       
       # * <tt>Default:</tt> ''
       # * <tt>Accepts:</tt> String
@@ -109,8 +109,8 @@ module AuthlogicOauth2
         self.class.oauth2_client_secret
       end
       
-      def oauth2_site
-        self.class.oauth2_site
+      def oauth2_config
+        self.class.oauth2_config
       end
       
       def oauth2_scope
